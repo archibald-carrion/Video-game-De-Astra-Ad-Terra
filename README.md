@@ -1,72 +1,67 @@
-# Creación de Videojuegos - De Astra Ad Terra
-## Entrega
-Fecha de entrega: 27 de octubre de 2024
+# Game development - De Astra Ad Terra
 
+## Game Description
+This is a science fiction game where the player controls a spaceship that must avoid asteroids and enemy ships while shooting enemies.  
+The game includes:  
+- A main menu  
+- An introduction screen providing context about the story  
+- Three levels  
+- A "death" screen displayed when the player dies, allowing redirection to any of the three levels  
+- A "congratulation" screen that allows redirection to the main menu  
 
-## Descripción del juego
-Es un juego de ciencia ficción en el que el jugador controla una nave espacial que debe esquivar asteroides y naves enemigas, mientras dispara a enemigos.
-El juego cuenta con :
-- un menú principal
-- una pantalla de introducción para tener mas contexto sobre la historia
-- tres niveles
-- una pantalla de "muerte" donde llega el jugador si se muere que permite redirrecionar a los tres niveles
-- una pantalla de "congratulation" que permite redirrecionar al menu principal
-El juego cuenta con música de fondo y assets propios. 
+The game features background music and custom assets.  
 
-## Controles
-- W: Mover la nave hacia arriba
-- S: Mover la nave hacia abajo
-- A: Mover la nave hacia la izquierda
-- D: Mover la nave hacia la derecha
-- Espacio: Disparar
-- P: Pausar el juego
+## Controls
+- **W**: Move the spaceship upward  
+- **S**: Move the spaceship downward  
+- **A**: Move the spaceship to the left  
+- **D**: Move the spaceship to the right  
+- **Space**: Shoot  
+- **P**: Pause the game  
 
-## Historia del juego
-El juego se desarrolla en un futuro muy lejano donde la humanidad ha colonizado otros sistemas solares y otras galaxias, tras milenios la humanidad se ha ido olvidando de su origen y de la tierra o "Terra" como se refiere en el juego.
-Al pasar tanto tiempo los humanos olvidaron de donde venian, muchos creen que siempre han vivido en el espacio, pero hay una leyenda que habla de un pequeño planeta perdido en la inmensidad del espacio, un planeta que fue el origen de la humanidad, un planeta que se llama "Terra".
-El/la jugador/a interpreta al Capitan Castellum, al encontrar un antiguo artefacto en una de las colonias, el capitan descubre que el artefacto es una especie de mapa que lo lleva a un portal que lo llevara a "Terra", el capitan decide seguir el mapa y descubrir la verdad sobre el origen de la humanidad.
-Tras recolectar los artefactos necesarios, el capitan llega a "Terra", el juego termina con una pantalla de "congratulation", dejando al jugador con la duda de que descubrio el capitan en "Terra".
+## Game Story
+The game is set in a distant future where humanity has colonized other solar systems and galaxies. Over millennia, humanity has forgotten its origins and Earth, referred to as "Terra" in the game.  
+After so much time, humans believe they have always lived in space, but a legend speaks of a small planet lost in the vastness of space—a planet that was humanity's origin, called "Terra."  
 
-## Objetivos del juego
-Para ir avanzando en el juego, el jugador debe:
-- recolectar power ups que le permiten moverse mas rapido, a nivel de narrativa, estos items representan antiguas tecnologias que permite a la nave pasar a traves de los portales para llegar al siguiente nivel
-- disparar a los enemigos para ganar tener el mayor score posible
-- esquivar los asteroides y naves enemigas para no morir
-- el jugador no puede pasar al siguiente nivel si no ha recolectado todos los artefactos necesarios
+The player takes on the role of Captain Castellum. Upon discovering an ancient artifact in one of the colonies, the captain finds it to be a kind of map leading to a portal to "Terra." The captain decides to follow the map and uncover the truth about humanity's origins.  
 
-## 4 enemigos
-En mi juego hay 4 enemigos:
-- asteroides, no se pueden destruir, pero si se pueden esquivar
-- enemigos arrañas, se pueden destruir con un disparo y dan 10 puntos, usualmente no se mueve muy rapido
-- enemigos circulares azules, se pueden destruir con un disparo y dan 15 puntos, usualmente se mueve mas rapido que los enemigos arrañas y "rodan"
-- enemigos circulares rojos, son muy grandes y no se pueden destruir
+After collecting the necessary artifacts, the captain reaches "Terra." The game ends with a "congratulation" screen, leaving the player wondering what the captain discovered on "Terra."  
 
+## Game Objectives
+To progress in the game, the player must:  
+- Collect power-ups that increase movement speed. Narratively, these items represent ancient technologies that allow the ship to traverse portals to the next level.  
+- Shoot enemies to achieve the highest score possible.  
+- Avoid asteroids and enemy ships to stay alive.  
+- Collect all necessary artifacts to advance to the next level.  
 
+## Four Enemies
+The game features four types of enemies:  
+- **Asteroids**: Cannot be destroyed but can be avoided.  
+- **Spider enemies**: Can be destroyed with one shot, awarding 10 points. They typically move slowly.  
+- **Blue circular enemies**: Can be destroyed with one shot, awarding 15 points. They usually move faster than spider enemies and "roll."  
+- **Red circular enemies**: Very large and cannot be destroyed.  
 
-
-## Guía de uso
-Para compilar el programa, ejecute el siguiente comando:
+## Usage Guide
+To compile the program, run the following command:  
 ```bash
 make clean; make; make run
-```
-El proyecto fue desarrollado en Ubuntu 24.04 en WSL2, utilizando el compilador g++ 13.2.0
+```  
+The project was developed on Ubuntu 24.04 in WSL2 using the g++ 13.2.0 compiler.  
 
-El makefile para funcionar con mi arquitectura de carpeta fue modificado.
+The Makefile was modified to work with my folder architecture.  
 
+## Development Process
+The game was developed using the engine provided in class, gradually adding the functionalities required for the assignment by following the available platform videos.  
 
+Key modifications made to the engine include:  
+- Adding an audio manager for background music and sound effects.  
+- Adding new Lua bindings to load and play music and sound effects.  
+- Fixing several bugs in the engine, such as a bug that failed to delete entities and components when changing scenes, which led to new entities inheriting components from the previous scene.  
+- Adding a score system to track and display the player's score on the screen.  
+- Implementing a shooting system that allows the player to shoot enemies infinitely, limited only by how fast they can press the spacebar.  
+- Splitting the ECS file into several smaller files (component.hpp, entity.hpp, entity.cpp, system.hpp, and system.cpp) for better readability. The ECS.hpp file was modified to include these new files, without affecting engine functionality or runtime performance.  
 
-## Proceso de desarrollo
-Para desarrollar el juego se uso el motor hecho en clase, el desarrollo se llevo a cabo siguiendo los videos disponibles en la plataforma, y agregando poco a poco las funcionalidades requeridas por la tarea.
-
-Los principales cambios realizados en el motor fueron los siguientes:
-- Se agrego un audio manager para reproducir música de fondo y efectos de sonido
-- Se agregaron nuevos lua bindings para poder cargar y reproducir música y efectos de sonido
-- Se arreglaron varios bugs en el motor, como el bug que no borraba los entities y components al cambiar de escena, lo cual llevaba a tener nuevos entities con componentes de la escena anterior
-- Se agrego el score sytem que permite llevar la cuenta del score del jugador y mostrarlo en pantalla
-- Se agrego el sistema de disparo, que permite al jugador disparar a los enemigos de manera "infinita" ya que el unico limite es la frecuencia con el cual el/la jugador/a puede darle click a la tecla de espacio
-- Una considerable modificación fue la creación de varios archivos para el ECS, ya que el archivo ECS.h estaba muy grande y dificultaba la lectura del código. Para esto se crearon los archivos component.hpp, entity.hpp, entity.cpp, system.hpp y system.cpp, el archivo ECS.hpp se modifico para incluir los nuevos archivos, esa modificación no genera cambios en el funcionamiento del motor ni tampoco tiene impacto en runtime performance.
-
-Adjunto se agrego una serie de screenshots del juego ejecutandose:
+Screenshots of the game in action are included below:  
 ![screenshot del menu del juego](documentation/main_menu.PNG)
 ![screenshot del primer nivel](documentation/level_01.PNG)
 ![screenshot del segundo nivel](documentation/level_02.PNG)
@@ -290,7 +285,7 @@ classDiagram
 
 ```
 
-## Ressources used for the game
+## Resources used for the game
 - [arcade classic font](https://www.1001fonts.com/arcadeclassic-font.html)
 - [background generator](https://deep-fold.itch.io/space-background-generator)
 - Music made by game developer [Namlin] (https://github.com/namlin)
