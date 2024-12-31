@@ -1,4 +1,9 @@
-# Game development - De Astra Ad Terra
+# Game development - De Astra Ad Terra :rocket:
+
+![C++17](https://img.shields.io/badge/C++-17-blue?style=flat-square)
+![Lua](https://img.shields.io/badge/Scripting-Lua-2C2D72?style=flat-square)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/archibald-carrion/Video-game-De-Astra-Ad-Terra?style=flat-square)
 
 ## Game Description
 This is a science fiction game where the player controls a spaceship that must avoid asteroids and enemy ships while shooting enemies.  
