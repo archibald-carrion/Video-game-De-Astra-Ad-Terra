@@ -70,18 +70,18 @@ Screenshots of the game in action are included below:
 ![screenshot de la pantalla de "congratulation"](documentation/win_screen.PNG)
 
 
-## Instalación de las bibliotecas necesarias
-Para instalar las bibliotecas necesarias en linux, ejecute el siguiente comando:
+## Installing Required Libraries
+To install the necessary libraries on Linux, run the following command:  
 ```bash
 sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev lua5.3 liblua5.3-dev
-```
+```  
 
-## Puntos extras
-Para obtener puntos extras, implemente las siguientes características:
-- [x] Se implemento el audio manager para reproducir música de fondo y efectos de sonido, ademas se usaron audios hechos propios por [Namlin] (https://github.com/namlin)
-- [x] Todos los assets graficos, salvo las fuentes y el background fueron hechos por mi usando el programa [GIMP](https://www.gimp.org/)
+## Extra Points
+To earn extra points, the following features were implemented:  
+- [x] An audio manager to play background music and sound effects, using original audio by [Namlin](https://github.com/namlin).  
+- [x] All graphic assets, except fonts and backgrounds, were created by [me](https://github.com/archibald-carrion) using [GIMP](https://www.gimp.org/).  
 
-## UML del motor de videojuegos
+## Game Engine UML Diagram
 ```mermaid
 classDiagram
 
